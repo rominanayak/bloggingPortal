@@ -17,8 +17,7 @@ namespace bloggingPortal.Controllers
         {
             _context = context;
         }
-        //BlogDataContext _db = new BlogDataContext();
-        // GET: /<controller>/
+
         public IActionResult Index()
         {
             var blogs = _context.Blog.ToList();
@@ -49,7 +48,7 @@ namespace bloggingPortal.Controllers
         }
 
         [HttpPost]
-        public IActionResult Blog(Guid id, Comment newComment )
+        public IActionResult Blog(Guid id, Comment newComment)
         {
             if (ModelState.IsValid)
             {
@@ -59,8 +58,6 @@ namespace bloggingPortal.Controllers
                 return RedirectToAction("Blog", new { Id = id });
             }
             return Blog(id);
-            var blog = _context.Blog.Single(m => m.Id == id);
-            return View(blog);
         }
     }
 }

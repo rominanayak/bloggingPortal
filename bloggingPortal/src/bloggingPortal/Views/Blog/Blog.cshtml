@@ -1,5 +1,10 @@
 @model bloggingPortal.Models.Blog
 
+@using bloggingPortal.Models
+@using bloggingPortal.Controllers
+@using Microsoft.AspNet.Identity
+@using System.Web
+
 @{
     ViewData["Title"] = "Blog";
 }
@@ -9,8 +14,10 @@
 <p>@Model.Body</p>
 
 
+<hr />
 <h3>Comments</h3>
 
+@*@if(Model.Comments != null) {*@
     @foreach (var comment in Model.Comments)
     {
     <div class="comment">
@@ -19,11 +26,13 @@
         <hr />
     </div>
     }
+@*  }*@
 
 @using (Html.BeginForm())
 {
-    <p>Author: @Html.TextBox("NewComment.UserName")</p>
-    <p>Text : @Html.TextArea("NewComment.Body")</p>
+    <br />
+    <p>Author: @Html.TextBox("NewComment.UserName")</p><br />
+    <p>Text : @Html.TextArea("NewComment.Body")</p><br />
     <p><input type="submit" value="Submit" /></p>
 
 }

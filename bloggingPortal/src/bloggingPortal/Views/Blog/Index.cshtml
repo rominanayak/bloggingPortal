@@ -13,5 +13,6 @@
 @foreach (var item in Model) {
     <h3><a href="@Url.Action("Blog", new { Id = item.Id })">@item.Title</a></h3>
     <small>@item.PostedOn</small>
-    <p>@item.Summary</p>    
+    <p>@item.Summary</p> 
+    <hr />   
 }

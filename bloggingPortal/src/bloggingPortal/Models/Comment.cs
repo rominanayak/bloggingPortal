@@ -5,7 +5,6 @@ namespace bloggingPortal.Models
     public class Comment
     {
         public Guid Id { get; set; }
-        //public string BlogId { get; set; }
         public Blog blog { get; set; }
         public DateTime DateTime { get; set; }
         public string UserName { get; set; }
