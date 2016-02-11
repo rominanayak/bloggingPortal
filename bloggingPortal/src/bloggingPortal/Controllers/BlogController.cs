@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using bloggingPortal.Models;
+using Microsoft.AspNet.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace bloggingPortal.Controllers
 {
+    [Authorize]
     public class BlogController : Controller
     {
         private ApplicationDbContext _context;
@@ -17,7 +19,7 @@ namespace bloggingPortal.Controllers
         {
             _context = context;
         }
-
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var blogs = _context.Blog.ToList();
@@ -41,6 +43,7 @@ namespace bloggingPortal.Controllers
             return View(blog);
         }
 
+        [AllowAnonymous]
         public IActionResult Blog(Guid id)
         {
             var blog = _context.Blog.Single(m => m.Id == id);
