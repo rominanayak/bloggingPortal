@@ -1,10 +1,11 @@
 {
-  "userSecretsId": "aspnet5-bloggingPortal-e73777a0-37f3-4376-9f01-2776b2cbd3f2",
-  "version": "1.0.0-*",
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel",
+    "ef": "EntityFramework.Commands"
+  },
   "compilationOptions": {
     "emitEntryPoint": true
   },
-
   "dependencies": {
     "EntityFramework.Commands": "7.0.0-rc1-final",
     "EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
@@ -28,29 +29,32 @@
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final"
   },
-
-  "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel",
-    "ef": "EntityFramework.Commands"
-  },
-
-  "frameworks": {
-    "dnx451": {
-      "dependencies": {
-      }
-    },
-    "dnxcore50": { }
-  },
-
   "exclude": [
     "wwwroot",
     "node_modules"
   ],
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+        "Facebook": "7.0.6",
+        "Microsoft.Owin": "3.0.1",
+        "Microsoft.Owin.Diagnostics": "3.0.1",
+        "Microsoft.Owin.Host.SystemWeb": "3.0.1",
+        "Microsoft.Owin.Security": "3.0.1",
+        "Microsoft.Owin.Security.Cookies": "3.0.1",
+        "Microsoft.Owin.Security.OAuth": "3.0.1",
+        "Simple.Owin.Cors": "0.1.2.52227"
+      }
+    },
+    "dnxcore50": { }
+  },
   "publishExclude": [
     "**.user",
     "**.vspscc"
   ],
   "scripts": {
     "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ]
-  }
+  },
+  "userSecretsId": "aspnet5-bloggingPortal-e73777a0-37f3-4376-9f01-2776b2cbd3f2",
+  "version": "1.0.0-*"
 }

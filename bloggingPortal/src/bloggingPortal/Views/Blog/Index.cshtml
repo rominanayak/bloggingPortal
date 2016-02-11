@@ -9,6 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<hr />
    
 @foreach (var item in Model) {
     <h3><a href="@Url.Action("Blog", new { Id = item.Id })">@item.Title</a></h3>

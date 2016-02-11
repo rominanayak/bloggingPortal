@@ -62,5 +62,23 @@ namespace bloggingPortal.Controllers
             }
             return Blog(id);
         }
+
+        public IActionResult Edit(Guid id)
+        {
+            var blog = _context.Blog.Single(m => m.Id == id);
+            return View(blog);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Blog blog)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Blog.Update(blog);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(blog);
+        }
     }
 }
