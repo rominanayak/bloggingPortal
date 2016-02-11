@@ -9,11 +9,19 @@ namespace bloggingPortal.Models
         [Key]
         [ScaffoldColumn(false)]
         public Guid Id { get; set; }
+
+        [Required]
         public string Title { get; set; }
-        [DataType(DataType.MultilineText)]
-        public string Body { get; set; }
+
         [ScaffoldColumn(false)]
         public DateTime PostedOn { get; set; }
+
+        [Required]
+        public string Summary { get; set; }
+
+        [Required]
+        [DataType(DataType.MultilineText)]
+        public string Body { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
         public Blog()

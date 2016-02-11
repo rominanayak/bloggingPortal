@@ -109,7 +109,7 @@ namespace bloggingPortal
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            SeedData.Initialize(app.ApplicationServices);
+            //SeedData.Initialize(app.ApplicationServices);
         }
 
         // Entry point for the application.

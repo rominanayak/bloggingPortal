@@ -1,0 +1,17 @@
+@model IEnumerable<bloggingPortal.Models.Blog>
+
+@{
+    ViewData["Title"] = "Blogs";
+}
+
+<h2>Blog Listing</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+   
+@foreach (var item in Model) {
+    <h3><a href="@Url.Action("Blog", new { Id = item.Id })">@item.Title</a></h3>
+    <small>@item.PostedOn</small>
+    <p>@item.Summary</p>    
+}
