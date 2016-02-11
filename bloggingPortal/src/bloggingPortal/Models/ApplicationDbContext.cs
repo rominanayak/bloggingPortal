@@ -18,5 +18,6 @@ namespace bloggingPortal.Models
             // Add your customizations after calling base.OnModelCreating(builder);
         }
         public DbSet<Blog> Blog { get; set; }
+        public DbSet<Comment> Comment { get; set; }
     }
 }

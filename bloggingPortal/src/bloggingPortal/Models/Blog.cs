@@ -16,14 +16,9 @@ namespace bloggingPortal.Models
         public DateTime PostedOn { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
-    }
-
-    public class Comment
-    {
-        public string Id { get; set; }
-        public string BlogId { get; set; }
-        public DateTime DateTime { get; set; }
-        public string UserName { get; set; }
-        public string Body { get; set; }
+        public Blog()
+        {
+            PostedOn = DateTime.Now;
+        }
     }
 }
