@@ -49,7 +49,7 @@ namespace bloggingPortal.Controllers
         }
 
         [HttpPost]
-        public IActionResult Blog(Guid id, Comment newComment)
+        public IActionResult Blog(Guid id, Comment newComment )
         {
             if (ModelState.IsValid)
             {
