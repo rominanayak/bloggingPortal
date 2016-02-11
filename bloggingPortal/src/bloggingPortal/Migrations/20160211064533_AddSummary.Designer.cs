@@ -8,9 +8,10 @@ using bloggingPortal.Models;
 namespace bloggingPortal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160211064533_AddSummary")]
+    partial class AddSummary
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.0-rc1-16348")
@@ -66,7 +67,7 @@ namespace bloggingPortal.Migrations
 
             modelBuilder.Entity("bloggingPortal.Models.Blog", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Body")
@@ -93,7 +94,7 @@ namespace bloggingPortal.Migrations
 
                     b.Property<string>("UserName");
 
-                    b.Property<long?>("blogId");
+                    b.Property<Guid?>("blogId");
 
                     b.HasKey("Id");
                 });
